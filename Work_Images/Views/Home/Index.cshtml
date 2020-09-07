@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Work_Images.Models.Carro>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<button type="button" class="btn btn-outline-primary"> Adicionar carro </button>
+<a asp-action="Carros" asp-controller="Home" class="btn btn-outline-primary"></a>
+
+<div class="container">
+    <div class="row">
+        <div class="tab-pane">
+            @foreach (var car in Model)
+            {
+                <div class="alert-info">
+                    <p>@Html.DisplayNameFor(Model => car.Modelo)</p>
+                    <p>@Html.DisplayNameFor(Model => car.Valor)</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
